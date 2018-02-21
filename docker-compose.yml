@@ -7,13 +7,8 @@ services:
       restart: always
       ports:
         - 3306:3306
-      env-file:
+      env_file:
         - .env
-      environment:
-        MYSQL_ROOT_PASSWORD: IekAdsela42!!
-        MYSQL_DATABASE: backend_ahrenshoop
-        MYSQL_USER: ba_ah
-        MYSQL_PASSWORD: 2grobi6
 
     wordpress:
       depends_on:
@@ -24,6 +19,8 @@ services:
       ports:
         - "80:80"
       restart: always
+      env_file:
+        - .env
       environment:
         WORDPRESS_DB_HOST: db:3306
         WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
