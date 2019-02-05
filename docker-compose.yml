@@ -13,7 +13,7 @@ services:
     wordpress:
       depends_on:
         - db
-      image: wordpress:4.9.8
+      image: wordpress:latest
       volumes: 
         - ./wp_content:/var/www/html/wp-content/
       ports:
